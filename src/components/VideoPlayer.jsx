@@ -11,7 +11,7 @@ export const VideoPlayer = ({ user }) => {
   useEffect(() => {
   console.log(user,"user")
     user.videoTrack.play(ref.current);
-    user.audioTrack?.play(ref.current)
+    // user.audioTrack?.play(ref.current)
     
   }, []);
 
