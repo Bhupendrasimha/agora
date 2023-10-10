@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>WDJ Virtual Call</h1>
+      <h1>Virtual Call</h1>
 
       {!joined && (
         <button onClick={() => setJoined(true)}>
