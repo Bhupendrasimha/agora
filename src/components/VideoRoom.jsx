@@ -69,7 +69,20 @@ const createAgoraClient = ({
     });
 
     tracks =
-      await AgoraRTC.createMicrophoneAndCameraTracks();
+      await AgoraRTC.createMicrophoneAndCameraTracks({
+
+        encoderConfig: "music_standard",
+  // microphoneId: currentMic.deviceId,
+  aec: true // Enable echo cancellati
+      }
+      );
+
+// client.setAudioProfile("speech_standard"); // Set the audio profile
+//client.setParameters('{"che.audio.enable_aec": 1}'); // Enable AEC
+
+//...
+
+// rtc.setLocalAudioEchoCancellation(true);
 
     await client.publish(tracks);
 
