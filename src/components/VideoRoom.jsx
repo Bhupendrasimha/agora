@@ -47,6 +47,19 @@ const createAgoraClient = ({
       client.subscribe(user, mediaType).then(() => {
         if (mediaType === 'video') {
           onVideoTrack(user);
+         
+        }
+        if (mediaType === "audio") {
+          const remoteAudioTrack = user.audioTrack;
+          remoteAudioTrack.play();
+          setUsers((prevUsers) => {
+            return (prevUsers.map((User) => {
+              if (User.uid === user.uid) {
+                return { ...User, audio: user.hasAudio }
+              }
+              return User
+            }))
+          })
         }
       });
     });
