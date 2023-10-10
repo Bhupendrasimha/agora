@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import AgoraRTC, { createClient } from 'agora-rtc-sdk-ng';
 import { VideoPlayer } from './VideoPlayer';
 
-const APP_ID = '99ee7677a8a745ed94b7f7f03fdab53e';
-const TOKEN =
-  '00699ee7677a8a745ed94b7f7f03fdab53eIAC41k1WSRedMxTYBy711fVoEXD99OLwqQTXwzKZLks5bSKBCQIAAAAAEACggSnc+aWiYgEAAQAsqKJi';
-const CHANNEL = 'wdj';
+const APP_ID = 'b43559adc7d44ff581688cb5cfb1cdfd';
+const TOKEN ='007eJxTYOjhv5Rot1Xnb2tJ40GvCq/jFUIru7wcZUMbFdtDjvezb1dgSDIxNjW1TExJNk8xMUlLM7UwNLOwSE4yTU5LMkxOSUuRtVZNbQhkZPgYVMDMyACBID4LQ0lqcQkDAwDnyx4W'
+  
+const CHANNEL = 'test';
 
 AgoraRTC.setLogLevel(4);
 
@@ -106,6 +106,7 @@ export const VideoRoom = () => {
     const setup = async () => {
       const { tracks, uid } = await connect();
       setUid(uid);
+      console.log(tracks[0],'audio')
       setUsers((previousUsers) => [
         ...previousUsers,
         {

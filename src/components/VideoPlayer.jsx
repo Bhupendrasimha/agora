@@ -7,8 +7,12 @@ import React, {
 export const VideoPlayer = ({ user }) => {
   const ref = useRef();
 
+
   useEffect(() => {
+  console.log(user,"user")
     user.videoTrack.play(ref.current);
+    user.audioTrack?.play(ref.current)
+    
   }, []);
 
   return (
